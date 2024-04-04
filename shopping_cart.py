@@ -1,6 +1,6 @@
 def calculate_total(cart):
     total = 0
-    total_items = len(cart)
+    #total_items = len(cart)
     for item in cart:
         total += item['price']
     return total
@@ -14,8 +14,8 @@ CART = [
     {'name': 'Item C', 'price': '8.49'}
 ]
 
-for item in CART:
-    print(f"Item: {item['name']} - Price: ${item['price']}")
+for thing in CART:
+    print(f"Item: {thing['name']} - Price: ${thing['price']}")
 
 shopping_cart_total = calculate_total(CART)
 display_total(shopping_cart_total)
