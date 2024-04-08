@@ -1,1 +1,30 @@
+name: static analyisis and tests
 
+on:
+    push:
+      branches:
+        - main
+
+jobs:
+  static_analysis:
+      name: static analyisis and tests
+      runs-on: macos-latest
+
+    steps:
+    - name: checkout repository
+      uses: actions/checkout@v3
+      
+    - name: set up Python
+      uses: actions/setup-python3 
+      with:
+        python-version: 3.12.x
+
+    - name: install pylint 
+    run: brew install pylint 
+
+    - name: pylint test
+      run: pylint shopping_cart.py 
+
+    - name: run test suite 
+    run: python3 -m unittest shopping_cart_testing.py
+  
