@@ -11,7 +11,7 @@ def calculate_total(cart):
 
 def display_total(total):
     """prints total price"""
-    print("Total price: " + total)
+    print("Total price: " + str(total))
 
 CART = [
     {'name': 'Item A', 'price': 10.99},
